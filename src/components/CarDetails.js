@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 
-const CarDetails = ({ CarStore, match, location, props }) => {
+const CarDetails = ({ VehicleStore, match, location, props }) => {
     const {
     	params: { carId }
   	} = match
 
-	const [ model, setModel ] = useState(CarStore.cars[carId].VehicleModel)
-	const [ make, setMake ] = useState(CarStore.cars[carId].VehicleMake)
-	const [ image, setImage ] = useState(CarStore.cars[carId].image)
-	const [ id ] = useState(CarStore.cars[carId].id)
+	const [ model, setModel ] = useState(VehicleStore.cars[carId].VehicleModel)
+	const [ make, setMake ] = useState(VehicleStore.cars[carId].VehicleMake)
+	const [ image, setImage ] = useState(VehicleStore.cars[carId].image)
+	const [ id ] = useState(VehicleStore.cars[carId].id)
 	const [ isInEditMode, setEdit ] = useState(false)
 
 	const openEditView = () => {
@@ -21,24 +21,24 @@ const CarDetails = ({ CarStore, match, location, props }) => {
 		  		className="editInput"
 		  		type='text' 
 		  		defaultValue={make}
-		  		ref={CarStore.makeInput}
-		  		onChange={(event) => setMake(CarStore.makeInput.current.value)}
+		  		ref={VehicleStore.makeInput}
+		  		onChange={(event) => setMake(VehicleStore.makeInput.current.value)}
 		  		/>
 		  	<h3>New car model</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
 		  		defaultValue={model}
-		  		ref={CarStore.modelInput}
-		  		onChange={(event) => setModel(CarStore.modelInput.current.value)}
+		  		ref={VehicleStore.modelInput}
+		  		onChange={(event) => setModel(VehicleStore.modelInput.current.value)}
 		  		/>
 		  	<h3>New car image</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
 		  		defaultValue={image}
-		  		ref={CarStore.imageInput}
-		  		onChange={(event) => setImage(CarStore.imageInput.current.value)}
+		  		ref={VehicleStore.imageInput}
+		  		onChange={(event) => setImage(VehicleStore.imageInput.current.value)}
 		  		/>
 		  		<button className="button saveButton" onClick={updateCar}>Save</button>
 		  	</div>
@@ -46,7 +46,7 @@ const CarDetails = ({ CarStore, match, location, props }) => {
 	}
 
 	const updateCar = () => {	
-		CarStore.editCar(id)	
+		VehicleStore.editCar(id)	
 		setEdit(false)	
 	}		
 
@@ -71,4 +71,4 @@ const CarDetails = ({ CarStore, match, location, props }) => {
 	return isInEditMode ? openEditView() : openDefaultView()
 }
 
-export default inject ('CarStore') (observer(CarDetails))
+export default inject ('VehicleStore') (observer(CarDetails))

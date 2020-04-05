@@ -1,7 +1,7 @@
 import React from 'react';
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 
-class CarStore {
+class VehicleStore {
 	@observable makeInput = React.createRef();
 	@observable modelInput = React.createRef();
 	@observable imageInput = React.createRef();
@@ -31,8 +31,16 @@ class CarStore {
 		{id: "15", VehicleMake: "Audi", VehicleModel: "Q7", image: "https://pictures.dealer.com/aoa-images/42f3217ec5c4c42feeb7fae938ba6396.png"}
 	]
 
-}
+	//Add new car
+	@action addCar = ({id, VehicleMake, VehicleModel, image}) => {
+	this.cars.push({
+		id: ++this.lastId, 
+		VehicleMake: this.newMake.current.value, 
+		VehicleModel: this.newModel.current.value,
+		image: this.newImage.current.value
+	})
+}}
 
-const store = new CarStore()
+const store = new VehicleStore()
 
 export default store

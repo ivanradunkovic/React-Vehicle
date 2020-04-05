@@ -2,7 +2,7 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 
-const VehicleModel = ({ CarStore, match, location, props}) => {
+const VehicleModel = ({ VehicleStore, match, location, props}) => {
     const {
     	params: { carModel }
   	} = match
@@ -12,7 +12,7 @@ const VehicleModel = ({ CarStore, match, location, props}) => {
   		<Link to="/"><button className="button backButton">Back</button></Link>
   		<h3 className="title">Models</h3>
   		<div className="carsDiv">
-      		{CarStore.filteredCars.filter(car => car !== null && car.VehicleModel === carModel).map((car) => (
+      		{VehicleStore.filteredCars.filter(car => car !== null && car.VehicleModel === carModel).map((car) => (
 			    <div key={car.id} className="car">
 		        <img src={car.image} alt="" className="listImage"/>
 		        <Link to={`/makes/${car.VehicleMake}`} style={{ textDecoration: 'none' }}><h3 className="carTitle">{car.VehicleMake}</h3></Link>
@@ -26,4 +26,4 @@ const VehicleModel = ({ CarStore, match, location, props}) => {
 
 }
 
-export default inject ('CarStore') (observer(VehicleModel))
+export default inject ('VehicleStore') (observer(VehicleModel))
