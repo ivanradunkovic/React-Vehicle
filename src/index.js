@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'mobx-react';
-import CarStore from './stores/VehicleStore.js';
+import VehicleStore from './stores/VehicleStore.js';
 
 const Root = (
-	<Provider CarStore={CarStore}>
+	<Provider VehicleStore={VehicleStore}>
 		<App/>
 	</Provider>
 )
