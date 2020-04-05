@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 
 const VehicleDetails = ({ VehicleStore, match, location, props }) => {
     const {
-    	params: { carId }
+    	params: { vehicleId }
   	} = match
 
-	const [ model, setModel ] = useState(VehicleStore.cars[carId].VehicleModel)
-	const [ make, setMake ] = useState(VehicleStore.cars[carId].VehicleMake)
-	const [ image, setImage ] = useState(VehicleStore.cars[carId].image)
-	const [ id ] = useState(VehicleStore.cars[carId].id)
+	const [ model, setModel ] = useState(VehicleStore.vehicles[vehicleId].VehicleModel)
+	const [ make, setMake ] = useState(VehicleStore.vehicles[vehicleId].VehicleMake)
+	const [ image, setImage ] = useState(VehicleStore.vehicles[vehicleId].image)
+	const [ id ] = useState(VehicleStore.vehicles[vehicleId].id)
 	const [ isInEditMode, setEdit ] = useState(false)
 
 	const openEditView = () => {
 		return (
 			<div style={{textAlign: 'center'}}>
-			<h3>New car make</h3>
+			<h3>New vehicle make</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
@@ -24,7 +24,7 @@ const VehicleDetails = ({ VehicleStore, match, location, props }) => {
 		  		ref={VehicleStore.makeInput}
 		  		onChange={(event) => setMake(VehicleStore.makeInput.current.value)}
 		  		/>
-		  	<h3>New car model</h3>
+		  	<h3>New vehicle model</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
@@ -32,7 +32,7 @@ const VehicleDetails = ({ VehicleStore, match, location, props }) => {
 		  		ref={VehicleStore.modelInput}
 		  		onChange={(event) => setModel(VehicleStore.modelInput.current.value)}
 		  		/>
-		  	<h3>New car image</h3>
+		  	<h3>New vehicle image</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
@@ -40,13 +40,13 @@ const VehicleDetails = ({ VehicleStore, match, location, props }) => {
 		  		ref={VehicleStore.imageInput}
 		  		onChange={(event) => setImage(VehicleStore.imageInput.current.value)}
 		  		/>
-		  		<button className="button saveButton" onClick={updateCar}>Save</button>
+		  		<button className="button saveButton" onClick={updateVehicle}>Save</button>
 		  	</div>
 		)
 	}
 
-	const updateCar = () => {	
-		VehicleStore.editCar(id)	
+	const updateVehicle = () => {	
+		VehicleStore.editVehicle(id)	
 		setEdit(false)	
 	}		
 
@@ -57,9 +57,9 @@ const VehicleDetails = ({ VehicleStore, match, location, props }) => {
 				    <Link to="/"><button className="button closeButton">X</button></Link>
 				    <button className="button editButton"onClick={() => setEdit(!isInEditMode)}>Edit</button>
 			</div>
-			<div className="carInfo">
-			        <h2 className="carInfoTitle">{make}</h2>
-			        <h3 className="carInfoTitle">{model}</h3>
+			<div className="vehicleInfo">
+			        <h2 className="vehicleInfoTitle">{make}</h2>
+			        <h3 className="vehicleInfoTitle">{model}</h3>
 				    <div>
 				        <img src={image} alt="" className="detailsImage"/>
 				    </div>

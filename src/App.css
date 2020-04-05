@@ -33,3 +33,29 @@
   width: 250px;
   height: 150px;
 }
+
+.vehiclesDiv {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.vehicleTitle {
+  color: #F0F8FF;
+}
+
+.vehicleTitle:hover {
+  cursor: pointer;
+  color: #DEB887;
+}
+
+.vehicleSubtitle {
+  color: black;
+}
+
+.vehicleSubtitle:hover {
+  cursor: pointer;
+  color: #E32B2B;
+}

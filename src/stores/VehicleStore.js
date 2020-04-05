@@ -11,7 +11,7 @@ class VehicleStore {
 	@observable newModel = React.createRef();
 	@observable newImage = React.createRef();
 
-	@observable cars = [
+	@observable vehicles = [
 		{ id: "0", VehicleMake: "Hyundai", VehicleModel: "i30", image:"https://p7.hiclipart.com/preview/240/803/583/hyundai-motor-company-car-hyundai-i30-go-hyundai-tucson-hyundai-i30.jpg" },
 		{ id: "1", VehicleMake: "Volkswagen", VehicleModel: "Golf (Mk8)", image:"https://cdn.motor1.com/images/mgl/OYNeX/s3/volkswagen-golf-8-2019.jpg" },
 		{ id: "2", VehicleMake: "Škoda", VehicleModel: "Octavia (Mk4) Combi", image: "https://360view.hum3d.com/zoom/Skoda/Skoda_Octavia_Mk4_combi_2020_1000_0001.jpg" },
@@ -31,9 +31,9 @@ class VehicleStore {
 		{id: "15", VehicleMake: "Audi", VehicleModel: "Q7", image: "https://pictures.dealer.com/aoa-images/42f3217ec5c4c42feeb7fae938ba6396.png"}
 	]
 
-	//Add new car
-	@action addCar = ({id, VehicleMake, VehicleModel, image}) => {
-	this.cars.push({
+	//Add new vehicle
+	@action addVehicle = ({id, VehicleMake, VehicleModel, image}) => {
+	this.vehicles.push({
 		id: ++this.lastId, 
 		VehicleMake: this.newMake.current.value, 
 		VehicleModel: this.newModel.current.value,

@@ -6,7 +6,7 @@ const AddNewVehicle = ({VehicleStore}) => {
 
 	const add = (e) => {
 		e.preventDefault()
-		VehicleStore.addCar(VehicleStore.newMake.current.value)	
+		VehicleStore.addVehicle(VehicleStore.newMake.current.value)	
 	}
 
     return (

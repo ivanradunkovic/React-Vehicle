@@ -13,9 +13,9 @@ function App() {
       <div className="App">
       <Router>
         <Header text="Vehicle by Ivan Radunković"/>
-        <Route exact path="/makes/:carMake" component={VehicleMake} />
-        <Route exact path="/models/:carModel" component={VehicleModel}/>
-        <Route exact path="/car/:carId" component={VehicleDetails}/>
+        <Route exact path="/makes/:vehicleMake" component={VehicleMake} />
+        <Route exact path="/models/:vehicleModel" component={VehicleModel}/>
+        <Route exact path="/vehicle/:vehicleId" component={VehicleDetails}/>
         <Route exact path="/add" component={AddNewVehicle} />
       </Router>
       </div>

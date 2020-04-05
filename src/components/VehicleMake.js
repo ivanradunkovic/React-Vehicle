@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 
 const VehicleMake = ({ VehicleStore, match, location, props}) => {
     const {
-    	params: { carMake }
+    	params: { vehicleMake }
   	} = match
 
   	return (
   		<>
   		<Link to="/"><button className="button backButton">Back</button></Link>
   		<h3 className="title">Makes</h3>
-  		<div className="carsDiv">
-      		{VehicleStore.filteredCars.filter(car => car !== null && car.VehicleMake === carMake).map((car) => (
-			    <div key={car.id} className="car">
-		        <img src={car.image} alt="" className="listImage"/>
-		        <Link to={`/makes/${car.VehicleMake}`} style={{ textDecoration: 'none' }}><h3 className="carTitle">{car.VehicleMake}</h3></Link>
-		        <Link to={`/models/${car.VehicleModel}`} style={{ textDecoration: 'none' }}><h4 className="carSubtitle">{car.VehicleModel}</h4></Link>
-		        <Link to={`/car/${car.id}`} style={{ textDecoration: 'none' }}><h4 className="carTitle">Details</h4></Link>
+  		<div className="vehiclesDiv">
+      		{VehicleStore.filteredVehicles.filter(vehicle => vehicle !== null && vehicle.VehicleMake === vehicleMake).map((vehicle) => (
+			    <div key={vehicle.id} className="vehicle">
+		        <img src={vehicle.image} alt="" className="listImage"/>
+		        <Link to={`/makes/${vehicle.VehicleMake}`} style={{ textDecoration: 'none' }}><h3 className="vehicleTitle">{vehicle.VehicleMake}</h3></Link>
+		        <Link to={`/models/${vehicle.VehicleModel}`} style={{ textDecoration: 'none' }}><h4 className="vehicleSubtitle">{vehicle.VehicleModel}</h4></Link>
+		        <Link to={`/vehicle/${vehicle.id}`} style={{ textDecoration: 'none' }}><h4 className="vehicleTitle">Details</h4></Link>
 		        </div>
         	))}
       	</div>
