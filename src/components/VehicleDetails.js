@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 
-const CarDetails = ({ VehicleStore, match, location, props }) => {
+const VehicleDetails = ({ VehicleStore, match, location, props }) => {
     const {
     	params: { carId }
   	} = match
@@ -71,4 +71,4 @@ const CarDetails = ({ VehicleStore, match, location, props }) => {
 	return isInEditMode ? openEditView() : openDefaultView()
 }
 
-export default inject ('VehicleStore') (observer(CarDetails))
+export default inject ('VehicleStore') (observer(VehicleDetails))

@@ -4,7 +4,8 @@ import './App.css';
 import Header from './components/Header.js';
 import VehicleMake from './components/VehicleMake.js';
 import VehicleModel from './components/VehicleModel.js';
-import CarDetails from './components/CarDetails.js';
+import VehicleDetails from './components/VehicleDetails.js';
+import AddNewVehicle from './components/AddNewVehicle.js';
 
 function App() {
   
@@ -14,7 +15,8 @@ function App() {
         <Header text="Vehicle by Ivan Radunković"/>
         <Route exact path="/makes/:carMake" component={VehicleMake} />
         <Route exact path="/models/:carModel" component={VehicleModel}/>
-        <Route exact path="/car/:carId" component={CarDetails}/>
+        <Route exact path="/car/:carId" component={VehicleDetails}/>
+        <Route exact path="/add" component={AddNewVehicle} />
       </Router>
       </div>
     )
