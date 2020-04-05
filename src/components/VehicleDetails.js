@@ -22,24 +22,21 @@ const VehicleDetails = ({ VehicleStore, match, location, props }) => {
 		  		type='text' 
 		  		defaultValue={make}
 		  		ref={VehicleStore.makeInput}
-		  		onChange={(event) => setMake(VehicleStore.makeInput.current.value)}
-		  		/>
+		  		onChange={(event) => setMake(VehicleStore.makeInput.current.value)}/>
 		  	<h3>New vehicle model</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
 		  		defaultValue={model}
 		  		ref={VehicleStore.modelInput}
-		  		onChange={(event) => setModel(VehicleStore.modelInput.current.value)}
-		  		/>
+		  		onChange={(event) => setModel(VehicleStore.modelInput.current.value)}/>
 		  	<h3>New vehicle image</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
 		  		defaultValue={image}
 		  		ref={VehicleStore.imageInput}
-		  		onChange={(event) => setImage(VehicleStore.imageInput.current.value)}
-		  		/>
+		  		onChange={(event) => setImage(VehicleStore.imageInput.current.value)}/>
 		  		<button className="button saveButton" onClick={updateVehicle}>Save</button>
 		  	</div>
 		)
@@ -64,7 +61,7 @@ const VehicleDetails = ({ VehicleStore, match, location, props }) => {
 				        <img src={image} alt="" className="detailsImage"/>
 				    </div>
 			</div>
-		</>
+			</>
 		)
     }
     

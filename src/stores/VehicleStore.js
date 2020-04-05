@@ -38,8 +38,9 @@ class VehicleStore {
 		VehicleMake: this.newMake.current.value, 
 		VehicleModel: this.newModel.current.value,
 		image: this.newImage.current.value
-	})
-}}
+		})
+	}
+}
 
 const store = new VehicleStore()
 
