@@ -2,22 +2,22 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 
-const VehicleModel = ({ VehicleStore, match, location, props}) => {
+const VehicleModel = ({ CarStore, match, location, props}) => {
     const {
-    	params: { vehicleModel }
+    	params: { carModel }
   	} = match
 
   	return (
   		<>
   		<Link to="/"><button className="button backButton">Back</button></Link>
-  		<h3 className="title">Models</h3>
-  		<div className="vehiclessDiv">
-      		{VehicleStore.filteredVehicles.filter(vehicle => vehicle !== null && vehicle.VehicleModel === vehicleModel).map((vehicle) => (
-			    <div key={vehicle.id} className="vehicle">
-		        <img src={vehicle.image} alt="" className="listImage"/>
-		        <Link to={`/makes/${vehicle.VehicleMake}`} style={{ textDecoration: 'none' }}><h3 className="vehicleTitle">{vehicle.VehicleMake}</h3></Link>
-		        <Link to={`/models/${vehicle.VehicleModel}`} style={{ textDecoration: 'none' }}><h4 className="vehicleSubtitle">{vehicle.VehicleModel}</h4></Link>
-		        <Link to={`/vehicle/${vehicle.id}`} style={{ textDecoration: 'none' }}><h4 className="vehicleTitle">Details</h4></Link>
+  		<h3 className="title">Vehicle Models</h3>
+  		<div className="carsDiv">
+      		{CarStore.filteredCars.filter(car => car !== null && car.VehicleModel === carModel).map((car) => (
+			    <div key={car.id} className="car">
+		        <img src={car.image} alt="" className="listImage"/>
+		        <Link to={`/makes/${car.VehicleMake}`} style={{ textDecoration: 'none' }}><h3 className="carTitle">{car.VehicleMake}</h3></Link>
+		        <Link to={`/models/${car.VehicleModel}`} style={{ textDecoration: 'none' }}><h4 className="carSubtitle">{car.VehicleModel}</h4></Link>
+		        <Link to={`/car/${car.id}`} style={{ textDecoration: 'none' }}><h4 className="carTitle">+</h4></Link>
 		        </div>
         	))}
       	</div>
@@ -26,4 +26,4 @@ const VehicleModel = ({ VehicleStore, match, location, props}) => {
 
 }
 
-export default inject ('VehicleStore') (observer(VehicleModel))
+export default inject ('CarStore') (observer(VehicleModel))

@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'mobx-react';
-import VehicleStore from './stores/VehicleStore.js';
-import './index.css';
+import CarStore from './stores/CarStore.js';
 
 const Root = (
-	<Provider VehicleStore={VehicleStore}>
+	<Provider CarStore={CarStore}>
 		<App/>
 	</Provider>
 )
