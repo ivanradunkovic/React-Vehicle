@@ -34,7 +34,7 @@
   height: 150px;
 }
 
-.vehiclesDiv {
+.carsDiv {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -42,20 +42,20 @@
   padding: 20px;
 }
 
-.vehicleTitle {
+.carTitle {
   color: #F0F8FF;
 }
 
-.vehicleTitle:hover {
+.carTitle:hover {
   cursor: pointer;
   color: #DEB887;
 }
 
-.vehicleSubtitle {
+.carSubtitle {
   color: black;
 }
 
-.vehicleSubtitle:hover {
+.carSubtitle:hover {
   cursor: pointer;
   color: #E32B2B;
 }
