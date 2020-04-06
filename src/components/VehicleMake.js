@@ -10,14 +10,14 @@ const VehicleMake = ({ VehicleStore, match, location, props}) => {
   	return (
   		<>
   		<Link to="/"><button className="button backButton">Back</button></Link>
-  		<h3 className="title">Makes</h3>
+  		<h3 className="title">Vehicle Makes</h3>
   		<div className="vehiclesDiv">
-      		{VehicleStore.filteredVehicles.filter(vehicle => vehicle !== null && vehicle.VehicleMake === vehicleMake).map((vehicle) => (
+      		{VehicleStore.filteredVehicless.filter(vehicle => vehicle !== null && vehicle.VehicleMake === vehicleMake).map((vehicle) => (
 			    <div key={vehicle.id} className="vehicle">
 		        <img src={vehicle.image} alt="" className="listImage"/>
 		        <Link to={`/makes/${vehicle.VehicleMake}`} style={{ textDecoration: 'none' }}><h3 className="vehicleTitle">{vehicle.VehicleMake}</h3></Link>
 		        <Link to={`/models/${vehicle.VehicleModel}`} style={{ textDecoration: 'none' }}><h4 className="vehicleSubtitle">{vehicle.VehicleModel}</h4></Link>
-		        <Link to={`/vehicle/${vehicle.id}`} style={{ textDecoration: 'none' }}><h4 className="vehicleTitle">Details</h4></Link>
+		        <Link to={`/vehicle/${vehicle.id}`} style={{ textDecoration: 'none' }}><h4 className="vehicleTitle">+</h4></Link>
 		        </div>
         	))}
       	</div>
