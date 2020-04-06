@@ -7,8 +7,11 @@ import { Link } from 'react-router-dom';
 
 class Cars extends Component {
 
+    paginate = (pageNumber) => {
+		this.props.CarStore.setPage(pageNumber)
+
     render() {
-		const { filter } = this.props.CarStore
+		// const { filter } = this.props.CarStore
     }
     
     const addOption = () => {
@@ -33,6 +36,14 @@ class Cars extends Component {
                     <Link to={`/models/${car.VehicleModel}`} style={{ textDecoration: 'none' }}><h4 className="carSubtitle">{car.VehicleModel}</h4></Link>
                     <Link to={`/car/${car.id}`} style={{ textDecoration: 'none' }}><h4 className="carTitle">+</h4></Link>
                     </div>
+
+                    </div>
+	      		<Pagination 
+	      			carsPerPage={this.props.CarStore.carsPerPage} 
+	      			totalCars={this.props.CarStore.filteredCars.length}
+	      			paginate={this.paginate}
+	      		/>
+            
                 ))}
 
 export default Cars;
