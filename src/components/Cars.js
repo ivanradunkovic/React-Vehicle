@@ -11,6 +11,16 @@ class Cars extends Component {
 		const { filter } = this.props.CarStore
     }
     
+    const addOption = () => {
+			return (
+			<>
+				<div className="addDiv">
+				<Link to={`/add`} style={{ textDecoration: 'none' }}><button className="button addButton">Add new car</button></Link>
+				</div>
+			</>
+			)
+		}
+
     const openDefaultView = () => {
         return (
         <>
