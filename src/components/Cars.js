@@ -26,8 +26,10 @@ class Cars extends Component {
       this.props.CarStore.removeCar(id)
     }
 
+    //Page numbers
     paginate = (pageNumber) => {
-		this.props.CarStore.setPage(pageNumber)
+      this.props.CarStore.setPage(pageNumber)
+      }
 
     render() {
       const { filter } = this.props.CarStore
@@ -45,7 +47,7 @@ class Cars extends Component {
                 />
               </form>
             </div>
-            <>
+            </>
         )
       }
     
@@ -53,9 +55,9 @@ class Cars extends Component {
         return (
           <>
           <div className="addDiv">
-            <link to={`/add`} style={{ textDecoration: `none` }}><button className="button addButton">Add new car</button></Link>
+            <Link to={`/add`} style={{ textDecoration: `none` }}><button className="button addButton">Add new car</button></Link>
           </div>
-          <>
+          </>
         )
       }
 
@@ -67,28 +69,28 @@ class Cars extends Component {
         {filterAndSort()}
         </div>
               <div className="carsDiv">
-                {this.props.CarStore.currentCars.filter(car => car !== null).map(car) => (
+                {this.props.CarStore.currentCars.filter(car => car !== null).map((car) => (
                   <div key={car.id} className="car">
                     <button className="delete" title="Delete car" onClick={this.delete.bind(this, car.id)}>
                       <img src={trashIcon} alt="Delete icon" className="deleteIcon" />
                     </button>
-                      <img src={car.image} alt= "Image of car" className="listImage" />
+                      <img src={car.image} alt= "Car" className="listImage" />
                         <Link to={`/makes/${car.VehicleMake}`} style={{textDecoration: 'none'}}><h3 className="carTitle">{car.VehicleMake}</h3></Link>
                         <Link to={`/models/${car.VehicleModel}`} style={{textDecoration: 'none'}}><h4 className="carSubtitle">{car.VehicleModel}</h4></Link>
                         <Link to={`/car/${car.id}`} style={{textDecoration: 'none'}}><h4 className="carTitle">Expand</h4></Link>
                         </div>
                 ))}
-
+        </div>
 	      		<Pagination 
 	      			carsPerPage={this.props.CarStore.carsPerPage} 
 	      			totalCars={this.props.CarStore.filteredCars.length}
 	      			paginate={this.paginate}
 	      		/>
         </>
-          )
-      }
+      )
+    }
 
-    const openSortedView = () {
+    const openSortedView = () => {
       return (
         <>
         <div className="options">
@@ -97,16 +99,16 @@ class Cars extends Component {
         </div>
               <div className="carsDiv">
                 {this.props.CarStore.currentSortedCars.map((car) => (
-                  <div key={car-id} className="car">
+                  <div key={car.id} className="car">
                     <button className="delete" title="Delete car" onClick={this.delete.bind(this, car.id)}>
                       <imd src={trashIcon} alt="Delete icon" className="deleteIcon" />
                     </button>
                       <img src={car.image} alt="Car" className="listImage"/>
                         <Link to={`/makes/${car.VehicleMake}`} style={{textDecoration: 'none'}}><h3 className="carTitle">{car.VehicleMake}</h3></Link>
-                        <Link to={`/models/${car-VehicleModel}`} style={{textDecoration: 'none'}}><h4 className="carSubtitle">{car.VehicleModel}</h4></Link>
+                        <Link to={`/models/${car.VehicleModel}`} style={{textDecoration: 'none'}}><h4 className="carSubtitle">{car.VehicleModel}</h4></Link>
                         <Link to={`car/${car.id}`} style={{textDecoration: 'none'}}><h4 className="carTitle">Expand</h4></Link>
                         </div>
-                ))}
+              ))}
 
         </div>
 
@@ -116,13 +118,11 @@ class Cars extends Component {
           pagination={this.paginate}
         />
     </>
-      )
-                }
+          )
+            }
 
-                return.this.props.CarStore.isSorted ? openSortedView() : openDefaultView()
-                }
-                }
+    return this.props.CarStore.isSorted ? openSortedView() : openDefaultView()
+    }
+  }
       
-
-    
 export default Cars;
