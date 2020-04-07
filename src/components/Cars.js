@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
-import { Pagination } from './Pagination';
+import Pagination from './Pagination.js';
 import trashIcon from '../assets/icons8-trash-48.png'
 
 @inject('CarStore')

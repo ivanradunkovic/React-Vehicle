@@ -34,10 +34,10 @@ class CarStore {
 	@observable lastId = this.cars.slice(-1)[0].id
 
 	@observable currentPage = 1 //When you start app you will be at first page
-	@observable cassPerPage = 5 //How much cars will be shonw per page
+	@observable carsPerPage = 5 //How much cars will be shonw per page
 
-	@observable indexOfFirstCar = (this.indexOfLastCar * this.cassPerPage)
-	@observable indexOfLastCar = (this.currentPage * this.cassPerPage)
+	@observable indexOfFirstCar = (this.indexOfLastCar * this.carsPerPage)
+	@observable indexOfLastCar = (this.currentPage * this.carsPerPage)
 	
 	@computed get currentCars () {
 		return this.filteredCars.slice(this.indexOfFirstCar, this.indexOfLastCar)
@@ -49,7 +49,7 @@ class CarStore {
 	}
 
 	@computed get currentSortedCars () {
-		return this.currentSortedCars.slice(this.indexOfFirstCar, this.indexOfLastCar)
+		return this.sortedCars.slice(this.indexOfFirstCar, this.indexOfLastCar)
 	}
 	
 	@computed get sortedCars () {
@@ -73,8 +73,19 @@ class CarStore {
 		this.car[id].image = this.imageInput.current.value
 	}  
 
-}
+	//Delete car
+	@action removeCar = (id) => {
+		this.cars[id] = null
+  	}
 
+  	//Set page to chosen number of page
+  	@action setPage = (pageNumber) => {
+	  	this.currentPage = pageNumber
+	  	this.indexOfLastCar = (this.currentPage * this.carsPerPage)
+	  	this.indexOfFirstCar = (this.indexOfLastCar - this.carsPerPage)
+  }
+
+}
 
 const store = new CarStore()
 
