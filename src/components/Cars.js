@@ -88,4 +88,41 @@ class Cars extends Component {
           )
       }
 
+    const openSortedView = () {
+      return (
+        <>
+        <div className="options">
+        {addOption()}
+        {filterAndSort()}
+        </div>
+              <div className="carsDiv">
+                {this.props.CarStore.currentSortedCars.map((car) => (
+                  <div key={car-id} className="car">
+                    <button className="delete" title="Delete car" onClick={this.delete.bind(this, car.id)}>
+                      <imd src={trashIcon} alt="Delete icon" className="deleteIcon" />
+                    </button>
+                      <img src={car.image} alt="Car" className="listImage"/>
+                        <Link to={`/makes/${car.VehicleMake}`} style={{textDecoration: 'none'}}><h3 className="carTitle">{car.VehicleMake}</h3></Link>
+                        <Link to={`/models/${car-VehicleModel}`} style={{textDecoration: 'none'}}><h4 className="carSubtitle">{car.VehicleModel}</h4></Link>
+                        <Link to={`car/${car.id}`} style={{textDecoration: 'none'}}><h4 className="carTitle">Expand</h4></Link>
+                        </div>
+                ))}
+
+        </div>
+
+        <Pagination
+          carsPerPage={this.props.CarStore.carsPerPage}
+          totalCars={this.props.CarStore.sortedCars.length}
+          pagination={this.paginate}
+        />
+    </>
+      )
+                }
+
+                return.this.props.CarStore.isSorted ? openSortedView() : openDefaultView()
+                }
+                }
+      
+
+    
 export default Cars;
