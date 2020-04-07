@@ -1,5 +1,5 @@
 import React from 'react';
-import { observable, action } from 'mobx';
+import { observable, action, computed } from 'mobx';
 
 class CarStore {
 	@observable makeInput = React.createRef();
@@ -31,9 +31,33 @@ class CarStore {
 		{id: "15", VehicleMake: "Audi", VehicleModel: "Q7", image: "https://pictures.dealer.com/aoa-images/42f3217ec5c4c42feeb7fae938ba6396.png"}
 	]
 
+	@observable lastId = this.cars.slice(-1)[0].id
+
+	@observable currentPage = 1 //When you start app you will be at first page
+	@observable cassPerPage = 5 //How much cars will be shonw per page
+
+	@observable indexOfFirstCar = (this.indexOfLastCar * this.cassPerPage)
+	@observable indexOfLastCar = (this.currentPage * this.cassPerPage)
 	
-  //add a new car 
-  @action addCar = ({id, VehicleMake, VehicleModel, image}) => {
+	@computed get currentCars () {
+		return this.filteredCars.slice(this.indexOfFirstCar, this.indexOfLastCar)
+	}
+
+	@computed get filteredCars () {
+		const matchesFilter = new RegExp(this.filter, "i")
+		return this.cars.filter(car => car !== null).filter(car => !this.filter || matchesFilter.test(car.VehicleMake))
+	}
+
+	@computed get currentSortedCars () {
+		return this.currentSortedCars.slice(this.indexOfFirstCar, this.indexOfLastCar)
+	}
+	
+	@computed get sortedCars () {
+		return this.filteredCars.filter(car => car !== null).slice().sort((a,b) => (a.VehicleMake > b.VehicleMake) ? 1 : -1);
+	}
+
+  	//Add new car
+ 	@action addCar = ({id, VehicleMake, VehicleModel, image}) => {
 	  this.cars.push({
 		  id: ++this.lastId, 
 		  VehicleMake: this.newMake.current.value, 
