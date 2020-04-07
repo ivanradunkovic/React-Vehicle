@@ -31,6 +31,8 @@ class CarStore {
 		{id: "15", VehicleMake: "Audi", VehicleModel: "Q7", image: "https://pictures.dealer.com/aoa-images/42f3217ec5c4c42feeb7fae938ba6396.png"}
 	]
 
+	@observable filter = "" //Filter cars by make
+
 	@observable lastId = this.cars.slice(-1)[0].id
 
 	@observable currentPage = 1 //When you start app you will be at first page
