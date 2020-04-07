@@ -65,6 +65,14 @@ class CarStore {
 		  image: this.newImage.current.value
 	  })
   }
+
+	//Edit car
+	@action editCar = (id) => {		
+		this.cars[id].VehicleMake = this.makeInput.current.value
+		this.cars[id].VehicleModel = this.modelInput.current.value
+		this.car[id].image = this.imageInput.current.value
+	}  
+
 }
 
 
