@@ -36,8 +36,8 @@ class CarStore {
 	@observable currentPage = 1 //When you start app you will be at first page
 	@observable carsPerPage = 5 //How much cars will be shonw per page
 
-	@observable indexOfFirstCar = (this.indexOfLastCar * this.carsPerPage)
 	@observable indexOfLastCar = (this.currentPage * this.carsPerPage)
+	@observable indexOfFirstCar = (this.indexOfLastCar - this.carsPerPage)
 	
 	@computed get currentCars () {
 		return this.filteredCars.slice(this.indexOfFirstCar, this.indexOfLastCar)
@@ -53,7 +53,7 @@ class CarStore {
 	}
 	
 	@computed get sortedCars () {
-		return this.filteredCars.filter(car => car !== null).slice().sort((a,b) => (a.VehicleMake > b.VehicleMake) ? 1 : -1);
+		return this.filteredCars.filter(car => car !== null).slice().sort((a, b) => (a.VehicleMake > b.VehicleMake) ? 1 : -1);
 	}
 
   	//Add new car
