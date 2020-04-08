@@ -30,6 +30,11 @@ const AddNewCar = ({CarStore}) => {
 					placeholder="Vehicle image"
 					ref={CarStore.newImage}
 				/>
+				<input className="addInput"
+					type="text"
+					placeholder="New vehicle info"
+					ref={CarStore.newInfo}
+				/>
 			</form>
 			<button className="button saveNewButton" onClick={add}><Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Save new vehicle</Link></button>
 			</div>

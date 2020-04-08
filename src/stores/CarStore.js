@@ -5,14 +5,16 @@ class CarStore {
 	@observable makeInput = React.createRef();
 	@observable modelInput = React.createRef();
 	@observable imageInput = React.createRef();
+	@observable infoInput = React.createRef();
 	@observable isSorted = false;
 	@observable newId = React.createRef();
 	@observable newMake = React.createRef();
 	@observable newModel = React.createRef();
 	@observable newImage = React.createRef();
+	@observable newInfo = React.createRef();
 
 	@observable cars = [
-		{ id: "0", VehicleMake: "Hyundai", VehicleModel: "i30", image:"https://p7.hiclipart.com/preview/240/803/583/hyundai-motor-company-car-hyundai-i30-go-hyundai-tucson-hyundai-i30.jpg" },
+		{ id: "0", VehicleMake: "Hyundai", VehicleModel: "i30", image:"https://p7.hiclipart.com/preview/240/803/583/hyundai-motor-company-car-hyundai-i30-go-hyundai-tucson-hyundai-i30.jpg", info: "Test information about car" },
 		{ id: "1", VehicleMake: "Volkswagen", VehicleModel: "Golf (Mk8)", image:"https://cdn.motor1.com/images/mgl/OYNeX/s3/volkswagen-golf-8-2019.jpg" },
 		{ id: "2", VehicleMake: "Škoda", VehicleModel: "Octavia (Mk4) Combi", image: "https://360view.hum3d.com/zoom/Skoda/Skoda_Octavia_Mk4_combi_2020_1000_0001.jpg" },
 		{ id: "3", VehicleMake: "BMW", VehicleModel: "M340i xDrive", image: "https://the-drive.imgix.net/https%3A%2F%2Fapi.thedrive.com%2Fwp-content%2Fuploads%2F2018%2F11%2Fp90323745_highres_the-all-new-bmw-3-se-e1542124443158.jpg%3Fquality%3D85?w=1440&auto=compress%2Cformat&ixlib=js-1.4.1&s=4c3c15eb72a86204b03b02a0569d969b" },
@@ -59,12 +61,13 @@ class CarStore {
 	}
 
   	//Add new car
- 	@action addCar = ({id, VehicleMake, VehicleModel, image}) => {
+ 	@action addCar = ({id, VehicleMake, VehicleModel, image, info}) => {
 	  this.cars.push({
 		  id: ++this.lastId, 
 		  VehicleMake: this.newMake.current.value, 
 		  VehicleModel: this.newModel.current.value,
-		  image: this.newImage.current.value
+		  image: this.newImage.current.value,
+		  info: this.newInfo.current.value
 	  })
   }
 
@@ -73,6 +76,7 @@ class CarStore {
 		this.cars[id].VehicleModel = this.modelInput.current.value
 		this.cars[id].VehicleMake = this.makeInput.current.value
 		this.cars[id].image = this.imageInput.current.value
+		this.cars[id].info = this.infoInput.current.value
 	}
  
 
