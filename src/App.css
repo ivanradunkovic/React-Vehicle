@@ -45,6 +45,7 @@
 
 .filter {
   width: 150px;
+  height: 21px;
   padding: 10px;  
   float: right;
   margin: 5px;
@@ -138,7 +139,7 @@
 }
 
 .editButton:hover {
-  background: #00cc99;
+  background: #283E51;
 }
 
 .saveButton {
@@ -149,16 +150,18 @@
 }
 
 .saveButton:hover {
-  background: #00cc99;
+  background: #283E51;
 }
 
 .sortButton {
+  height: 45px;
+  width: 50px;
   background: #4B5C94;
-  margin-right: 5%;
+  margin-right: 4%;
 }
 
 .sortButton:hover {
-  background: #00cc99;
+  background: #283E51;
 }
 
 .filterSort {
@@ -194,19 +197,13 @@
 }
 
 .addButton {
+  width: 100px;
+  height: 40px;
   background-color: #4B5C94;
 }
 
 .addButton:hover {
-  background-color: #00cc99;
-}
-
-.deleteButton {
-  background-color: #E32B2B;
-}
-
-.deleteButton:hover {
-  background-color: #ff8533;
+  background-color: #283E51;
 }
 
 .options {
@@ -224,7 +221,7 @@
 }
 
 .saveNewButton:hover {
-  background-color: #00cc99
+  background-color: #283E51
 }
 
 .addInput {
@@ -241,11 +238,14 @@
 
 .closeNewButton {
   background: #E32B2B;
-  margin: 10px 10px 0 0;
+  margin: 0 auto;
+  display: block;
+  float: none;
+  margin-top: 5px;
 }
 
 .closeNewButton:hover {
-  background: #ff8533;
+  background: red;
 }
 
 .delete {
@@ -271,13 +271,13 @@
 
 .pageItem a {
   padding: 10px;
-  background-color: lightgray;
+  background-color: #4B79A1;
   margin: 5px;
-  color: black;
+  color:white;
 }
 
 .pageItem a:hover:not(.active) {
-  background-color: #00cc99;
+  background-color: #283E51;
 }
 
 .pageItem.active {

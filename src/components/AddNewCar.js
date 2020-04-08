@@ -11,32 +11,32 @@ const AddNewCar = ({CarStore}) => {
 
     return (
 		<>
-			<Link to="/"><button className="button closeNewButton">X</button></Link>
 			<div className="addForm">
-			<h3 className="title">Add new car</h3>
+			<h3 className="title">NEW VEHICLE</h3>
 			<form>
 				<input className="addInput"
 					type="text"
-					placeholder="New vehicle make"
+					placeholder="Make"
 					ref={CarStore.newMake}
 				/>
 				<input className="addInput"
 					type="text"
-					placeholder="New vehicle model"
+					placeholder="Model"
 					ref={CarStore.newModel}
 				/>
 				<input className="addInput"
 					type="text"
-					placeholder="Vehicle image"
+					placeholder="URL of Vehicle Image"
 					ref={CarStore.newImage}
 				/>
 				<input className="addInput"
 					type="text"
-					placeholder="New vehicle info"
+					placeholder="Info"
 					ref={CarStore.newInfo}
 				/>
 			</form>
-			<button className="button saveNewButton" onClick={add}><Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Save new vehicle</Link></button>
+			<button className="button saveNewButton" onClick={add}><Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Save New Vehicle</Link></button>
+			<Link to="/"><button className="button closeNewButton">Close New Vehicle Editor</button></Link>
 			</div>
 		</>
 		)
