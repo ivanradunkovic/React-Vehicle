@@ -9,18 +9,22 @@
 }
 
 .header {
-  margin-bottom: 20px;
-  /* background-color:; */
-  height: 130px;
+  margin-bottom: 10px;
+  background: #DAE2F8; 
+  background: -webkit-linear-gradient(to right, #4B79A1, #283E51);  
+  background: linear-gradient(to right, #4B79A1, #283E51); 
+  height: 110px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
 .headerText {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  margin: 50px 20% 35px 0;
-  background:#008B8B; 
+  font-family: monospace;
+  margin: 35px 0% 35px 0;
+  background: #ADA996;
+  background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
   background-clip: border-box;
   -webkit-text-fill-color:
   transparent;
@@ -30,8 +34,20 @@
 }
 
 .headerImage {
-  width: 250px;
+  width: 300px;
   height: 150px;
+}
+
+.filterSort {
+  padding-bottom: 10px;
+  margin: 20px;
+}
+
+.filter {
+  width: 150px;
+  padding: 10px;  
+  float: right;
+  margin: 5px;
 }
 
 .carsDiv {
@@ -42,20 +58,288 @@
   padding: 20px;
 }
 
+.listImage {
+  width: 300px;
+  height: 200px;
+}
+
 .carTitle {
-  color: #F0F8FF;
+  color: #6495ED;
 }
 
 .carTitle:hover {
   cursor: pointer;
-  color: #DEB887;
+  color: #B0C4DE;
 }
 
 .carSubtitle {
-  color: black;
+  color:#6495ED;
 }
 
 .carSubtitle:hover {
   cursor: pointer;
-  color: #E32B2B;
+  color: #B0C4DE;
+}
+
+.car {
+  padding: 10px;
+  margin: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  position: relative;
+}
+
+.car:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.detailsImage {
+  width: 500px;
+  height: 350px;
+  margin: 0 auto;
+  display: block;
+  padding: 15px;
+}
+
+.carInfo {
+  margin-top: 10%;
+}
+
+.carInfoTitle {
+  color: #4B5C94;
+  text-align: center;
+  padding: 8px;
+}
+
+.button {
+  padding: 8px;
+  margin: 5px;
+  float: right;
+  border: none;
+  color: white;
+}
+
+.editAndCloseBtns {
+  margin: 20px;
+}
+
+.closeButton {
+  background: #E32B2B;
+  margin-top: 20px;
+}
+
+.closeButton:hover {
+  background: #ff8533;
+}
+
+.editButton {
+  background: #4B5C94;
+  margin-top: 20px;
+}
+
+.editButton:hover {
+  background: #00cc99;
+}
+
+.saveButton {
+  background: #4B5C94;
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
+.saveButton:hover {
+  background: #00cc99;
+}
+
+.sortButton {
+  background: #4B5C94;
+  margin-right: 5%;
+}
+
+.sortButton:hover {
+  background: #00cc99;
+}
+
+.filterSort {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin: 0 11% 0 12%;
+  flex-grow: 30% 70%;
+}
+
+.editInput {
+  text-align: center;
+  padding: 8px;
+  margin: 15px;
+}
+
+.backButton {
+  background: gray;
+  margin: 2%;
+}
+
+.backButton:hover {
+  background: lightgray;
+}
+
+.title {
+  text-align: center;
+  margin: 2%;
+}
+
+.addDiv {
+  margin: 0 12% 0 12%;
+}
+
+.addButton {
+  background-color: #4B5C94;
+}
+
+.addButton:hover {
+  background-color: #00cc99;
+}
+
+.deleteButton {
+  background-color: #E32B2B;
+}
+
+.deleteButton:hover {
+  background-color: #ff8533;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.saveNewButton {
+  background-color: #4B5C94;
+  margin: 0 auto;
+  display: block;
+  float: none;
+}
+
+.saveNewButton:hover {
+  background-color: #00cc99
+}
+
+.addInput {
+  padding: 1%;
+  width: 200px;
+  display: block;
+  margin: 0 auto 1%;
+}
+
+.addForm {
+  text-align: center;
+  padding: 2%;
+}
+
+.closeNewButton {
+  background: #E32B2B;
+  margin: 10px 10px 0 0;
+}
+
+.closeNewButton:hover {
+  background: #ff8533;
+}
+
+.delete {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.deleteIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.pageItem a {
+  padding: 10px;
+  background-color: lightgray;
+  margin: 5px;
+  color: black;
+}
+
+.pageItem a:hover:not(.active) {
+  background-color: #00cc99;
+}
+
+.pageItem.active {
+  background-color: #4B5C94;
+}
+
+.pageLink {
+  color: black;
+}
+
+.pageLink:visited {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 520px){
+  .detailsImage {
+    width: 300px;
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 775px){
+  .carInfoTitle {
+    text-align: left;
+  }
+  .detailsImage {
+    margin: 0;
+  }
+
+  .headerText {
+    margin: 35px 5% 10px 0;
+    letter-spacing: 0;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .headerText {
+    margin: 35px 5% 10px 10px;
+    font-size: 0.9em;
+  }
+
+  .headerImage {
+    width: 200px;
+    height: 100px;
+    margin-top: 20px;
+  }
+
+  .addDiv {
+    margin: 0 8% 0 8%;
+  }
+
+  .filterSort {
+    margin: 0 8% 0 8%;
+  }
+}
+
+@media only screen and (min-width: 1500px){
+  .filterSort {
+    margin: 0 11% 0 5%;
+  }
+
+  .addDiv {
+    margin: 0 5% 0 11%;
+  }
 }
