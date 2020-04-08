@@ -33,11 +33,6 @@
   text-align: left;
 }
 
-.headerImage {
-  width: 300px;
-  height: 150px;
-}
-
 .filterSort {
   padding-bottom: 10px;
   margin: 20px;
@@ -62,6 +57,13 @@
 .listImage {
   width: 300px;
   height: 200px;
+}
+
+.listImageDetails {
+  width: 300px;
+  height: 200px;
+  margin-block-end: 10px;
+  justify-content: center;
 }
 
 .carTitle {
@@ -103,13 +105,20 @@
 }
 
 .carInfo {
-  margin-top: 10%;
+  margin-top: 5%;
+  text-align: justify;
+  padding: 15px;
+  
 }
 
-.carInfoTitle {
-  color: #4B5C94;
+.carInfoTitleMake {
+  color: black;
   text-align: center;
-  padding: 8px;
+}
+
+.carInfoTitleModel {
+  color: black;
+  text-align: center;
 }
 
 .button {
@@ -189,7 +198,7 @@
 
 .title {
   text-align: center;
-  margin: 2%;
+  margin: 1%;
 }
 
 .addDiv {
@@ -317,12 +326,6 @@
   .headerText {
     margin: 35px 5% 10px 10px;
     font-size: 0.9em;
-  }
-
-  .headerImage {
-    width: 200px;
-    height: 100px;
-    margin-top: 20px;
   }
 
   .addDiv {

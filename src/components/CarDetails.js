@@ -17,7 +17,7 @@ const CarDetails = ({ CarStore, match, location, props }) => {
 	const openEditView = () => {
 		return (
 			<div style={{textAlign: 'center'}}>
-			<h3>Change vehicle make</h3>
+			<h3>Change Make</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
@@ -25,7 +25,7 @@ const CarDetails = ({ CarStore, match, location, props }) => {
 		  		ref={CarStore.makeInput}
 		  		onChange={(event) => setMake(CarStore.makeInput.current.value)}
 		  		/>
-		  	<h3>Change vehicle model</h3>
+		  	<h3>Change Model</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
@@ -33,7 +33,7 @@ const CarDetails = ({ CarStore, match, location, props }) => {
 		  		ref={CarStore.modelInput}
 		  		onChange={(event) => setModel(CarStore.modelInput.current.value)}
 		  		/>
-		  	<h3>Add new image</h3>
+		  	<h3>Add New Image URL</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
@@ -41,7 +41,7 @@ const CarDetails = ({ CarStore, match, location, props }) => {
 		  		ref={CarStore.imageInput}
 		  		onChange={(event) => setImage(CarStore.imageInput.current.value)}
 		  		/>
-			<h3>Add new image</h3>
+			<h3>Change Info</h3>
 		  		<input 
 		  		className="editInput"
 		  		type='text' 
@@ -49,7 +49,8 @@ const CarDetails = ({ CarStore, match, location, props }) => {
 		  		ref={CarStore.infoInput}
 		  		onChange={(event) => setInfo(CarStore.infoInput.current.value)}
 		  		/>
-		  		<button className="button saveButton" onClick={updateCar}>Save</button>
+		  		<button className="button saveButton" onClick={updateCar}>Save Changed Vehicle</button>
+				<Link to="/"><button className="button closeNewButton">Close Changed Vehicle Editor</button></Link>
 		  	</div>
 		)
 	}
@@ -63,12 +64,12 @@ const CarDetails = ({ CarStore, match, location, props }) => {
 		return (
 		<>
 			<div className="editAndCloseBtns">
-				    <Link to="/"><button className="button closeButton">X</button></Link>
+				    <Link to="/"><button className="button closeButton">Close</button></Link>
 				    <button className="button editButton"onClick={() => setEdit(!isInEditMode)}>Edit</button>
 			</div>
 			<div className="carInfo">
-			        <h2 className="carInfoTitle">{make}</h2>
-			        <h3 className="carInfoTitle">{model}</h3>
+			        <h2 className="carInfoTitleMake">{make}</h2>
+			        <h3 className="carInfoTitleModel">{model}</h3>
 					<h3 className="carInfoTitle">{info}</h3>
 				    <div>
 				        <img src={image} alt="" className="detailsImage"/>
