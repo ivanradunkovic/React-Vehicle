@@ -41,7 +41,7 @@ class Cars extends Component {
 			      <form onSubmit={e => this.filter(e)}>
 			        <input className="filter"
 			        type="text" 
-			        placeholder="Filter by vehicle make" 
+			        placeholder="Filter by Make" 
 			        value={filter}
 			        onChange={this.filter.bind(this)}
 			        />

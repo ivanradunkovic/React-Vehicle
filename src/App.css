@@ -13,7 +13,7 @@
   background: #DAE2F8; 
   background: -webkit-linear-gradient(to right, #4B79A1, #283E51);  
   background: linear-gradient(to right, #4B79A1, #283E51); 
-  height: 110px;
+  height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -21,7 +21,7 @@
 
 .headerText {
   font-family: monospace;
-  margin: 35px 0% 35px 0;
+  margin-top: 35px;
   background: #ADA996;
   background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
   background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
@@ -29,8 +29,34 @@
   -webkit-text-fill-color:
   transparent;
   -webkit-background-clip: text;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   text-align: left;
+}
+
+.footer {
+  margin-top: 374px;
+  background: #DAE2F8; 
+  background: -webkit-linear-gradient(to right, #4B79A1, #283E51);  
+  background: linear-gradient(to right, #4B79A1, #283E51); 
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footerText {
+  font-family: monospace;
+  font-size: 7px;
+  margin: auto;
+  background: #ADA996;
+  background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+  background-clip: border-box;
+  -webkit-text-fill-color:
+  transparent;
+  -webkit-background-clip: text;
+  letter-spacing: 0px;
+  text-align: center;
 }
 
 .filterSort {
@@ -105,15 +131,14 @@
 }
 
 .carInfo {
-  margin-top: 5%;
   text-align: justify;
-  padding: 15px;
-  
+  padding: 10px;
+  margin-bottom: -109px;
 }
 
 .carInfoTitleMake {
-  color: black;
-  text-align: center;
+  color:black;
+  text-align:center;
 }
 
 .carInfoTitleModel {
@@ -139,7 +164,7 @@
 }
 
 .closeButton:hover {
-  background: #ff8533;
+  background: red;
 }
 
 .editButton {
@@ -184,7 +209,7 @@
 .editInput {
   text-align: center;
   padding: 8px;
-  margin: 15px;
+  margin: 15.7px;
 }
 
 .backButton {
@@ -198,7 +223,12 @@
 
 .title {
   text-align: center;
-  margin: 1%;
+  margin:32.5px;
+}
+
+.titleModel {
+  text-align: center;
+  margin:27px;
 }
 
 .addDiv {
@@ -235,14 +265,15 @@
 
 .addInput {
   padding: 1%;
-  width: 200px;
+  width: 225px;
   display: block;
   margin: 0 auto 1%;
+  margin-bottom: 3.7px;
 }
 
 .addForm {
   text-align: center;
-  padding: 2%;
+  padding:1%;
 }
 
 .closeNewButton {
@@ -343,6 +374,6 @@
   }
 
   .addDiv {
-    margin: 0 5% 0 11%;
+    margin: 0 5% 0px 11%;
   }
 }

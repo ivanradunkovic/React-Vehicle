@@ -10,7 +10,7 @@ const VehicleModel = ({ CarStore, match, location, props}) => {
   	return (
   		<>
   		<Link to="/"><button className="button backButton">Back to Home</button></Link>
-  		<h3 className="title">Vehicle Models</h3>
+  		<h3 className="titleModel">Vehicle Models</h3>
   		<div className="carsDiv">
       		{CarStore.filteredCars.filter(car => car !== null && car.VehicleModel === carModel).map((car) => (
 			    <div key={car.id} className="car">
