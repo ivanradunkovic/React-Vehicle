@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 
 const Pagination = ({ carsPerPage, totalCars, paginate}) => {
+
 	const pageNumbers = []
 	const [clickedId, setClicked] = useState('')
 
-	for(let i = 1; i <= Math.ceil(totalCars/carsPerPage); i++){
+	for(let i = 1; i <= Math.ceil(totalCars/carsPerPage); i++) {
 		pageNumbers.push(i)
 	}
 
@@ -16,7 +17,7 @@ const Pagination = ({ carsPerPage, totalCars, paginate}) => {
 						<a onClick={() => {
 							paginate(number)
 							setClicked(id)
-						}} href="/#" id={id} className={id === clickedId ? "pageItem a active" : ""}>
+							}} href="/#" id={id} className={id === clickedId ? "pageItem a active" : ""}>
 						{number}
 						</a>
 					</li>

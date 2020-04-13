@@ -26,7 +26,7 @@ class Cars extends Component {
 		this.props.CarStore.removeCar(id)
 	}
 
-  //Page numbers
+  	//Page numbers
 	paginate = (pageNumber) => {
 		this.props.CarStore.setPage(pageNumber)
 	}
