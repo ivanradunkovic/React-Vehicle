@@ -102,6 +102,8 @@ class Cars extends Component {
 				        <div key={car.id} className="car">
 				          <button className="delete" title="Delete car" onClick={this.delete.bind(this, car.id)}>
 				        	  <img src={trashIcon} alt="" className="deleteIcon" />
+							  onClick={(e) => { if (window.confirm('Are you sure you wish to delete this item?')) this.deleteItem(e) } }>
+              Delete
 				          </button>
 				            <img src={car.image} alt="" className="listImage"/>
 				              <Link to={`/makes/${car.VehicleMake}`} style={{ textDecoration: 'none' }}><h3 className="carTitle">{car.VehicleMake}</h3></Link>
